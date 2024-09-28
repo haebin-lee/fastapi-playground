@@ -25,9 +25,18 @@ This is a simple FastAPI project to demonstrate basic API functionality
    ```
 5. Run the application:
    ```
-   unicorn main:app -reload
+   python3 main.py
    ```
 
 ### API End points:
 
 - `GET /`: Returns a "Hello World" message
+- `GET /api/users`: Returns user list
+- `GET /api/users/{uuid}`: Returns a user
+- `POST /api/user`: Add a user
+  ```
+  {
+   "name": "name",
+   "email": "email",
+  }
+  ```
