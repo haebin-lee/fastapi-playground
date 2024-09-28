@@ -33,10 +33,12 @@ This is a simple FastAPI project to demonstrate basic API functionality
 - `GET /`: Returns a "Hello World" message
 - `GET /api/users`: Returns user list
 - `GET /api/users/{uuid}`: Returns a user
-- `POST /api/user`: Add a user
+- `POST /api/users`: Adds a user
+- `PUT /api/users/{uuid}`: Updates a user
   ```
   {
    "name": "name",
    "email": "email",
   }
   ```
+- `DELETE /api/users{uuid}`: Deletes a user

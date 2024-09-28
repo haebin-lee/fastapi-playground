@@ -9,3 +9,7 @@ class UserResponse(BaseModel):
   id: UUID
   name: str
   email: EmailStr
+
+class UserUpdate(BaseModel): 
+  name: str
+  email: EmailStr

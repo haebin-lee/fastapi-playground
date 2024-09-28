@@ -1,5 +1,5 @@
 from fastapi import APIRouter, HTTPException
-from app.schemas.user import UserCreate, UserResponse
+from app.schemas.user import UserCreate, UserResponse, UserUpdate
 from app.services.user_service import UserService
 from uuid import UUID
 from app.models.user import User
@@ -20,3 +20,11 @@ async def get_user(user_id: UUID):
 @router.get("/users", response_model=list[UserResponse])
 async def get_users():
   return await UserService.get_users()
+
+@router.put("/users/{user_id}", response_model=UserResponse)
+async def update_user(user_id: UUID, user: UserUpdate):
+  return await UserService.update_user(user_id, user)
+
+@router.delete("/users/{user_id}", response_model=UserResponse)
+async def delete_user(user_id: UUID):
+  return await UserService.delete_user(user_id)
